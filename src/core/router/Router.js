@@ -1,5 +1,11 @@
 export default class Router {
+  #routes = [];
+
   constructor() {}
 
-  addRouter() {}
+  add() {}
+
+  go() {}
+
+  listen() {}
 }
