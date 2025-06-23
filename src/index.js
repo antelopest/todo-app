@@ -6,4 +6,4 @@ import shared from './shared/shared.js';
 import SidebarComponent from './shared/sidebar/sidebar.component';
 import Router from './core/router/Router';
 
-document.getElementById('app').innerHTML = SidebarComponent();
+document.getElementById('app').innerHTML = await SidebarComponent();
