@@ -28,4 +28,15 @@ document.getElementById('app').innerHTML = await SidebarComponent();
  * english
  * development
  * sport
+ *
+ * sidebar HTML element
+ * app-router HTML element
+ *
+ * user Store
+ * {
+ * email
+ * firstName
+ * lastName
+ * job
+ * }
  * */
