@@ -1,0 +1,37 @@
+:root {
+  /* Colors */
+  --color-blue-500: hsl(220, 98%, 61%);
+  --color-background-linear-gradient: linear-gradient(
+    180deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  /* Colors for themes */
+  --light-theme-color-gray-50: hsl(0, 0%, 98%);
+  --light-theme-color-purple-300: hsl(234, 39%, 85%);
+  --light-theme-color-gray-300: hsl(233, 11%, 84%);
+  --light-theme-color-gray-600: hsl(236, 9%, 61%);
+  --light-theme-color-navy-850: hsl(235, 19%, 35%);
+
+  --dark-theme-color-navy-950: hsl(235, 21%, 11%);
+  --dark-theme-color-navy-900: hsl(235, 24%, 19%);
+  --dark-theme-color-purple-300: hsl(234, 39%, 85%);
+  --dark-theme-color-purple-100-hover: hsl(236, 33%, 92%);
+  --dark-theme-color-purple-600: hsl(235, 16%, 43%);
+  --dark-theme-color-purple-700: hsl(233, 14%, 35%);
+  --dark-theme-color-purple-800: hsl(237, 14%, 26%);
+  --dark-theme-color-gray-600: hsl(236, 9%, 61%);
+
+  /* Font */
+  --font-size: 18px;
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+  --font-family: 'Josefin Sans';
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
