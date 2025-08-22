@@ -1,19 +1,14 @@
-:root,
-.light-theme {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
   /* Colors */
+  --color-white: hsl(0, 0%, 100%);
   --color-blue-500: hsl(220, 98%, 61%);
   --color-background-linear-gradient: linear-gradient(
     180deg,
     hsl(192, 100%, 67%),
     hsl(280, 87%, 65%)
   );
-
-  /* Colors for themes */
-  --light-theme-color-gray-50: hsl(0, 0%, 98%);
-  --light-theme-color-purple-300: hsl(234, 39%, 85%);
-  --light-theme-color-gray-300: hsl(233, 11%, 84%);
-  --light-theme-color-gray-600: hsl(236, 9%, 61%);
-  --light-theme-color-navy-850: hsl(235, 19%, 35%);
 
   /* Font */
   --font-size: 18px;
@@ -22,20 +17,79 @@
   --font-family: 'Josefin Sans';
 }
 
-.dark-theme {
-  --dark-theme-color-navy-950: hsl(235, 21%, 11%);
-  --dark-theme-color-navy-900: hsl(235, 24%, 19%);
-  --dark-theme-color-purple-300: hsl(234, 39%, 85%);
-  --dark-theme-color-purple-100-hover: hsl(236, 33%, 92%);
-  --dark-theme-color-purple-600: hsl(235, 16%, 43%);
-  --dark-theme-color-purple-700: hsl(233, 14%, 35%);
-  --dark-theme-color-purple-800: hsl(237, 14%, 26%);
-  --dark-theme-color-gray-600: hsl(236, 9%, 61%);
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Colors for light themes */
+    --light-theme-color-gray-50: hsl(0, 0%, 98%);
+    --light-theme-color-purple-300: hsl(234, 39%, 85%);
+    --light-theme-color-gray-300: hsl(233, 11%, 84%);
+    --light-theme-color-gray-600: hsl(236, 9%, 61%);
+    --light-theme-color-navy-850: hsl(235, 19%, 35%);
+  }
+
+  body {
+    background-color: var(--light-theme-color-gray-50);
+  }
+
+  .todo {
+    background-image: url('./asserts/images/bg-mobile-light.jpg');
+  }
+
+  .todo__title {
+    color: var(--color-white);
+  }
+
+  .todo__theme-toggle {
+    background-image: url('./asserts/icons/icon-moon.svg');
+  }
+
+  /* AFTER */
+  .todo__input {
+    background-color: var(--dark-theme-color-navy-900);
+    color: var(--dark-theme-color-purple-300);
+  }
+
+  .todo__input::placeholder {
+    color: var(--dark-theme-color-purple-600);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark;
+    /* Colors for dark themes */
+    --dark-theme-color-navy-950: hsl(235, 21%, 11%);
+    --dark-theme-color-navy-900: hsl(235, 24%, 19%);
+    --dark-theme-color-purple-300: hsl(234, 39%, 85%);
+    --dark-theme-color-purple-100-hover: hsl(236, 33%, 92%);
+    --dark-theme-color-purple-600: hsl(235, 16%, 43%);
+    --dark-theme-color-purple-700: hsl(233, 14%, 35%);
+    --dark-theme-color-purple-800: hsl(237, 14%, 26%);
+    --dark-theme-color-gray-600: hsl(236, 9%, 61%);
+  }
+
+  body {
+    background-color: var(--dark-theme-color-navy-950);
+  }
+
+  .todo {
+    background-image: url('./asserts/images/bg-mobile-dark.jpg');
+  }
+
+  .todo__title {
+    color: var(--color-white);
+  }
+
+  .todo__theme-toggle {
+    background-image: url('./asserts/icons/icon-sun.svg');
+  }
+
+  .todo__input {
+    background-color: var(--dark-theme-color-navy-900);
+    color: var(--dark-theme-color-purple-300);
+  }
+
+  .todo__input::placeholder {
+    color: var(--dark-theme-color-purple-600);
   }
 }
 
@@ -45,8 +99,55 @@
   box-sizing: border-box;
 }
 
-body {
+:is(body, input, button) {
   font-family: var(--font-family), sans-serif;
   font-size: var(--font-size);
   font-weight: var(--font-weight-400);
+}
+
+.todo {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+
+  padding: 0 2rem;
+}
+
+.todo__header {
+  padding: 3rem 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo__title {
+  padding: 0.5rem 0 0 0;
+  letter-spacing: 0.5rem;
+
+  font-size: 2rem;
+  font-weight: var(--font-weight-700);
+}
+
+.todo__theme-toggle {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 26px;
+  height: 26px;
+}
+
+.todo__form {
+}
+
+.todo__input {
+  width: 100%;
+  padding: 1rem 3rem;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
 }
