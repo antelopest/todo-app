@@ -15,17 +15,20 @@
       <header class="todo__header">
         <h1 class="todo__title">TODO</h1>
         <button
+          id="todo__theme-toggle"
           type="button"
           class="todo__theme-toggle"
           aria-label="Toggle theme"></button>
       </header>
-      <form class="todo__form" id="todo__form">
-        <input
-          name="task"
-          type="text"
-          class="todo__input"
-          placeholder="Create a new todo..."
-          aria-label="New todo input" />
+      <form id="todo__form" class="todo__form">
+        <label class="todo__label">
+          <input
+            name="task"
+            type="text"
+            class="todo__input"
+            placeholder="Create a new todo..."
+            aria-label="New todo input" />
+        </label>
       </form>
       <ul class="todo__list">
         <li class="todo__item todo__todo--completed">
@@ -35,44 +38,35 @@
             class="todo__checkbox"
             checked />
           <span class="todo__text"> Complete online JavaScript course </span>
-          <button type="button" class="todo__delete" aria-label="Delete todo">
-            Delete todo
-          </button>
+          <button
+            type="button"
+            class="todo__delete"
+            aria-label="Delete todo"></button>
         </li>
         <li class="todo__item">
           <input type="checkbox" name="completed" class="todo__checkbox" />
           <span class="todo__text">Jog around the park 3x</span>
-          <button class="todo__delete" aria-label="Delete todo">
-            Delete todo
-          </button>
+          <button class="todo__delete" aria-label="Delete todo"></button>
         </li>
         <li class="todo__item">
           <input type="checkbox" name="completed" class="todo__checkbox" />
           <span class="todo__text">10 minutes meditation</span>
-          <button class="todo__delete" aria-label="Delete todo">
-            Delete todo
-          </button>
+          <button class="todo__delete" aria-label="Delete todo"></button>
         </li>
         <li class="todo__item">
           <input type="checkbox" name="completed" class="todo__checkbox" />
           <span class="todo__text">Read for 1 hour</span>
-          <button class="todo__delete" aria-label="Delete todo">
-            Delete todo
-          </button>
+          <button class="todo__delete" aria-label="Delete todo"></button>
         </li>
         <li class="todo__item">
           <input type="checkbox" name="completed" class="todo__checkbox" />
           <span class="todo__text">Pick up groceries</span>
-          <button class="todo__delete" aria-label="Delete todo">
-            Delete todo
-          </button>
+          <button class="todo__delete" aria-label="Delete todo"></button>
         </li>
         <li class="todo__item">
           <input type="checkbox" name="completed" class="todo__checkbox" />
           <span class="todo__text">Complete Todo App on Frontend Mentor</span>
-          <button class="todo__delete" aria-label="Delete todo">
-            Delete todo
-          </button>
+          <button class="todo__delete" aria-label="Delete todo"></button>
         </li>
       </ul>
 

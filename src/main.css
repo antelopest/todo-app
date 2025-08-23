@@ -15,6 +15,14 @@
   --font-weight-400: 400;
   --font-weight-700: 700;
   --font-family: 'Josefin Sans';
+
+  color-scheme: light dark;
+}
+
+:is(body, input, button) {
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-400);
 }
 
 @media (prefers-color-scheme: light) {
@@ -99,12 +107,6 @@
   box-sizing: border-box;
 }
 
-:is(body, input, button) {
-  font-family: var(--font-family), sans-serif;
-  font-size: var(--font-size);
-  font-weight: var(--font-weight-400);
-}
-
 .todo {
   background-repeat: no-repeat;
   background-position: top;
@@ -114,7 +116,7 @@
 }
 
 .todo__header {
-  padding: 3rem 0;
+  padding: 2.5rem 0 1.5rem 0;
 
   display: flex;
   flex-direction: row;
@@ -142,12 +144,97 @@
 }
 
 .todo__form {
+  padding: 1rem 0;
+}
+
+.todo__label {
+  position: relative;
+  display: block;
+}
+
+.todo__label::before {
+  content: '';
+  position: absolute;
+  margin: 1rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+
+  border: 1px solid var(--dark-theme-color-purple-600);
+  background-color: transparent;
 }
 
 .todo__input {
   width: 100%;
-  padding: 1rem 3rem;
-  font-size: 0.9rem;
+  padding: 1.2rem 3rem 1rem 3rem;
+  font-size: 1rem;
   border: none;
   outline: none;
+}
+
+.todo__input::placeholder {
+  font-size: 1rem;
+}
+
+.todo__list {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.todo__item {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: var(--dark-theme-color-navy-900);
+  border-bottom: 1px solid var(--dark-theme-color-purple-700);
+  cursor: pointer;
+}
+
+.todo__checkbox {
+  margin: 1rem;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--dark-theme-color-purple-600);
+}
+
+.todo__text {
+  font-size: 1rem;
+  font-weight: var(--font-weight-400);
+  color: var(--dark-theme-color-purple-300);
+}
+
+.todo__delete {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url('./asserts/icons/icon-cross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 18px;
+  height: 18px;
+  margin: 1rem 1rem 1rem auto;
+}
+
+.todo__filters {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--dark-theme-color-navy-900);
+}
+
+.todo__filter {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: var(--font-weight-400);
+  color: var(--dark-theme-color-purple-300);
 }
