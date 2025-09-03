@@ -5,6 +5,12 @@ const Themes = {
   dark: 'dark'
 };
 
+const Filters = {
+  all: 'all',
+  active: 'active',
+  completed: 'completed'
+};
+
 const todos = [
   {
     id: 1,
@@ -78,9 +84,3 @@ const form = document.getElementById('todo__form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 });
-
-const Filters = {
-  all: 'all',
-  active: 'active',
-  completed: 'completed'
-};
