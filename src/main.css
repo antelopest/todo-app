@@ -197,6 +197,11 @@ body {
   cursor: pointer;
 }
 
+.todo__item:first-child {
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
 .todo__checkbox {
   margin: 1rem;
   border-radius: 50%;
