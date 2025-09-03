@@ -11,6 +11,7 @@
       href="./src/asserts/favicon/favicon-32x32.png" />
   </head>
   <body>
+    <div class="bg__image"></div>
     <main class="todo">
       <header class="todo__header">
         <h1 class="todo__title">TODO</h1>
@@ -30,14 +31,14 @@
             aria-label="New todo input" />
         </label>
       </form>
-      <ul class="todo__list">
+      <ul class="todo__list" id="todo__list">
         <li class="todo__item todo__todo--completed">
           <input
             type="checkbox"
             name="completed"
             class="todo__checkbox"
             checked />
-          <span class="todo__text"> Complete online JavaScript course </span>
+          <span class="todo__text"> Complete online JavaScript course</span>
           <button
             type="button"
             class="todo__delete"

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
+  color-scheme: light dark;
+
   /* Colors */
   --color-white: hsl(0, 0%, 100%);
   --color-blue-500: hsl(220, 98%, 61%);
@@ -13,92 +15,10 @@
   /* Font */
   --font-size: 18px;
   --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
   --font-weight-700: 700;
   --font-family: 'Josefin Sans';
-
-  color-scheme: light dark;
-}
-
-:is(body, input, button) {
-  font-family: var(--font-family), sans-serif;
-  font-size: var(--font-size);
-  font-weight: var(--font-weight-400);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    /* Colors for light themes */
-    --light-theme-color-gray-50: hsl(0, 0%, 98%);
-    --light-theme-color-purple-300: hsl(234, 39%, 85%);
-    --light-theme-color-gray-300: hsl(233, 11%, 84%);
-    --light-theme-color-gray-600: hsl(236, 9%, 61%);
-    --light-theme-color-navy-850: hsl(235, 19%, 35%);
-  }
-
-  body {
-    background-color: var(--light-theme-color-gray-50);
-  }
-
-  .todo {
-    background-image: url('./asserts/images/bg-mobile-light.jpg');
-  }
-
-  .todo__title {
-    color: var(--color-white);
-  }
-
-  .todo__theme-toggle {
-    background-image: url('./asserts/icons/icon-moon.svg');
-  }
-
-  /* AFTER */
-  .todo__input {
-    background-color: var(--dark-theme-color-navy-900);
-    color: var(--dark-theme-color-purple-300);
-  }
-
-  .todo__input::placeholder {
-    color: var(--dark-theme-color-purple-600);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Colors for dark themes */
-    --dark-theme-color-navy-950: hsl(235, 21%, 11%);
-    --dark-theme-color-navy-900: hsl(235, 24%, 19%);
-    --dark-theme-color-purple-300: hsl(234, 39%, 85%);
-    --dark-theme-color-purple-100-hover: hsl(236, 33%, 92%);
-    --dark-theme-color-purple-600: hsl(235, 16%, 43%);
-    --dark-theme-color-purple-700: hsl(233, 14%, 35%);
-    --dark-theme-color-purple-800: hsl(237, 14%, 26%);
-    --dark-theme-color-gray-600: hsl(236, 9%, 61%);
-  }
-
-  body {
-    background-color: var(--dark-theme-color-navy-950);
-  }
-
-  .todo {
-    background-image: url('./asserts/images/bg-mobile-dark.jpg');
-  }
-
-  .todo__title {
-    color: var(--color-white);
-  }
-
-  .todo__theme-toggle {
-    background-image: url('./asserts/icons/icon-sun.svg');
-  }
-
-  .todo__input {
-    background-color: var(--dark-theme-color-navy-900);
-    color: var(--dark-theme-color-purple-300);
-  }
-
-  .todo__input::placeholder {
-    color: var(--dark-theme-color-purple-600);
-  }
 }
 
 * {
@@ -107,11 +27,85 @@
   box-sizing: border-box;
 }
 
-.todo {
+:is(body, label, input, button, input, textarea) {
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-400);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --background-mobile-image: url('./asserts/images/bg-mobile-light.jpg');
+  --background-desktop-image: url('./asserts/images/bg-desktop-light.jpg');
+
+  --toggle-theme-button-icon: url('./asserts/icons/icon-moon.svg');
+
+  --body-background-color: hsl(0, 0%, 98%);
+
+  --input-before-border: hsl(234, 39%, 85%);
+  --input-background: hsl(0, 0%, 100%);
+  --input-color: hsl(235, 19%, 35%);
+
+  --list-item-background: hsl(0, 0%, 100%);
+  --list-item-border: hsl(234, 39%, 85%);
+
+  /*    !* Colors for light themes *!*/
+  --light-theme-color-gray-50: hsl(0, 0%, 98%);
+  --light-theme-color-purple-300: hsl(234, 39%, 85%);
+  --light-theme-color-gray-300: hsl(233, 11%, 84%);
+  --light-theme-color-gray-600: hsl(236, 9%, 61%);
+  --light-theme-color-navy-850: hsl(235, 19%, 35%);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --background-mobile-image: url('./asserts/images/bg-mobile-dark.jpg');
+  --background-desktop-image: url('./asserts/images/bg-desktop-dark.jpg');
+
+  --toggle-theme-button-icon: url('./asserts/icons/icon-sun.svg');
+
+  --body-background-color: hsl(235, 21%, 11%);
+
+  --input-before-border: hsl(235, 16%, 43%);
+  --input-background: hsl(235, 24%, 19%);
+  --input-color: hsl(234, 39%, 85%);
+
+  --list-item-background: hsl(235, 24%, 19%);
+  --list-item-border: hsl(235, 16%, 43%);
+
+  /*    !* Colors for dark themes *!*/
+  --dark-theme-color-navy-950: hsl(235, 21%, 11%);
+  --dark-theme-color-navy-900: hsl(235, 24%, 19%);
+  --dark-theme-color-purple-300: hsl(234, 39%, 85%);
+  --dark-theme-color-purple-100-hover: hsl(236, 33%, 92%);
+  --dark-theme-color-purple-600: hsl(235, 16%, 43%);
+  --dark-theme-color-purple-700: hsl(233, 14%, 35%);
+  --dark-theme-color-purple-800: hsl(237, 14%, 26%);
+  --dark-theme-color-gray-600: hsl(236, 9%, 61%);
+}
+
+body {
+  background-color: var(--body-background-color);
+  min-height: 100vh;
+}
+
+.bg__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 250px;
+  width: 100%;
+  z-index: -1;
+
+  background-image: var(--background-mobile-image);
   background-repeat: no-repeat;
   background-position: top;
-  background-size: contain;
+  background-size: cover;
+}
 
+.todo {
   padding: 0 2rem;
 }
 
@@ -126,15 +120,17 @@
 
 .todo__title {
   padding: 0.5rem 0 0 0;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.4rem;
 
-  font-size: 2rem;
-  font-weight: var(--font-weight-700);
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-600);
 }
 
 .todo__theme-toggle {
+  cursor: pointer;
   outline: none;
   border: none;
+  background-image: var(--toggle-theme-button-icon);
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -150,30 +146,38 @@
 .todo__label {
   position: relative;
   display: block;
+  height: 3.5rem;
 }
 
 .todo__label::before {
   content: '';
   position: absolute;
-  margin: 1rem;
+
+  top: 16px;
+  left: 16px;
+  bottom: 16px;
+
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
 
-  border: 1px solid var(--dark-theme-color-purple-600);
+  border: 1px solid var(--input-before-border);
   background-color: transparent;
 }
 
 .todo__input {
   width: 100%;
-  padding: 1.2rem 3rem 1rem 3rem;
-  font-size: 1rem;
+
+  padding: 1.1rem 1rem 1rem 3rem;
+
   border: none;
   outline: none;
+  border-radius: 0.5rem;
+  background-color: var(--input-background);
+  color: var(--input-color);
 }
 
 .todo__input::placeholder {
-  font-size: 1rem;
 }
 
 .todo__list {
@@ -184,11 +188,12 @@
 .todo__item {
   padding: 1rem 0;
   display: flex;
+  font-weight: var(--font-weight-400);
   flex-direction: row;
   align-items: center;
 
-  background-color: var(--dark-theme-color-navy-900);
-  border-bottom: 1px solid var(--dark-theme-color-purple-700);
+  background-color: var(--list-item-background);
+  border-bottom: 1px solid var(--list-item-border);
   cursor: pointer;
 }
 
@@ -201,7 +206,7 @@
 }
 
 .todo__text {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: var(--font-weight-400);
   color: var(--dark-theme-color-purple-300);
 }
@@ -214,8 +219,8 @@
   background-image: url('./asserts/icons/icon-cross.svg');
   background-repeat: no-repeat;
   background-position: center;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin: 1rem 1rem 1rem auto;
 }
 
@@ -238,3 +243,87 @@
   font-weight: var(--font-weight-400);
   color: var(--dark-theme-color-purple-300);
 }
+
+/*@media (prefers-color-scheme: light) {*/
+/*  :root {*/
+/*    !* Colors for light themes *!*/
+/*    --light-theme-color-gray-50: hsl(0, 0%, 98%);*/
+/*    --light-theme-color-purple-300: hsl(234, 39%, 85%);*/
+/*    --light-theme-color-gray-300: hsl(233, 11%, 84%);*/
+/*    --light-theme-color-gray-600: hsl(236, 9%, 61%);*/
+/*    --light-theme-color-navy-850: hsl(235, 19%, 35%);*/
+/*  }*/
+
+/*  body {*/
+/*    background-color: var(--light-theme-color-gray-50);*/
+/*  }*/
+
+/*  .todo {*/
+/*    background-image: url('./asserts/images/bg-mobile-light.jpg');*/
+/*    background-size: 300px auto;*/
+/*  }*/
+
+/*  @media (min-width: 768px) {*/
+/*    background-image: url('./asserts/images/bg-desktop-light.jpg');*/
+/*  }*/
+
+/*  .todo__header {*/
+/*  }*/
+
+/*  .todo__title {*/
+/*    color: var(--color-white);*/
+/*  }*/
+
+/*  .todo__theme-toggle {*/
+/*    background-image: url('./asserts/icons/icon-moon.svg');*/
+/*  }*/
+
+/*  !* AFTER *!*/
+/*  .todo__input {*/
+/*    background-color: var(--dark-theme-color-navy-900);*/
+/*    color: var(--dark-theme-color-purple-300);*/
+/*  }*/
+
+/*  .todo__input::placeholder {*/
+/*    color: var(--dark-theme-color-purple-600);*/
+/*  }*/
+/*}*/
+
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    !* Colors for dark themes *!*/
+/*    --dark-theme-color-navy-950: hsl(235, 21%, 11%);*/
+/*    --dark-theme-color-navy-900: hsl(235, 24%, 19%);*/
+/*    --dark-theme-color-purple-300: hsl(234, 39%, 85%);*/
+/*    --dark-theme-color-purple-100-hover: hsl(236, 33%, 92%);*/
+/*    --dark-theme-color-purple-600: hsl(235, 16%, 43%);*/
+/*    --dark-theme-color-purple-700: hsl(233, 14%, 35%);*/
+/*    --dark-theme-color-purple-800: hsl(237, 14%, 26%);*/
+/*    --dark-theme-color-gray-600: hsl(236, 9%, 61%);*/
+/*  }*/
+
+/*  body {*/
+/*    background-color: var(--dark-theme-color-navy-950);*/
+/*  }*/
+
+/*  .todo {*/
+/*    background-image: url('./asserts/images/bg-mobile-dark.jpg');*/
+/*  }*/
+
+/*  .todo__title {*/
+/*    color: var(--color-white);*/
+/*  }*/
+
+/*  .todo__theme-toggle {*/
+/*    background-image: url('./asserts/icons/icon-sun.svg');*/
+/*  }*/
+
+/*  .todo__input {*/
+/*    background-color: var(--dark-theme-color-navy-900);*/
+/*    color: var(--dark-theme-color-purple-300);*/
+/*  }*/
+
+/*  .todo__input::placeholder {*/
+/*    color: var(--dark-theme-color-purple-600);*/
+/*  }*/
+/*}*/
